@@ -7,8 +7,8 @@
   --foreground: #0f172a;
   --background: #f7fbf7;
   --background-accent: #f3ece2;
-  --font-sans: var(--font-manrope), system-ui, sans-serif;
-  --font-display: var(--font-dmserif), \"Georgia\", serif;
+  --font-sans: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
+  --font-display: "Playfair Display", "Georgia", serif;
 }
 
 * {

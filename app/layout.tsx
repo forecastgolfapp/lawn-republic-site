@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap"
-});
-
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  variable: "--font-dmserif",
-  weight: "400",
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   title: "Lawn Republic | Tulsa Weed Control & Fertilization",
@@ -38,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${dmSerif.variable} antialiased`}>
+      <body className="antialiased">
         <Analytics />
         <Header />
         <main>{children}</main>

@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
+
+const bodyFont = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+  weight: ["400", "500", "600"]
+});
+
+const displayFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["400", "600"]
+});
 
 export const metadata: Metadata = {
   title: "Lawn Republic | Tulsa Weed Control & Fertilization",
@@ -24,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${bodyFont.variable} ${displayFont.variable} antialiased`}>
         <Analytics />
         <Header />
         <main>{children}</main>

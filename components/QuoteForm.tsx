@@ -70,20 +70,16 @@ export const QuoteForm = ({
   };
 
   return (
-    <div
-      className={`rounded-3xl border border-white/70 bg-white/90 p-6 shadow-card backdrop-blur ${
-        className ?? ""
-      }`}
-    >
+    <div className={`card ${className ?? ""}`}>
       <div className="mb-4">
-        <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+        <p className="kicker">
           Free estimate
         </p>
-        <h3 className="font-display text-2xl text-slate-900">{title}</h3>
-        <p className="text-sm text-slate-600">{subtitle}</p>
+        <h3 className="font-display text-2xl text-brand-navy">{title}</h3>
+        <p className="text-sm text-brand-slate">{subtitle}</p>
       </div>
       {status === "success" ? (
-        <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-800">
+        <div className="rounded-2xl border border-brand-gold/40 bg-brand-cream p-4 text-sm text-brand-navy">
           Thanks! We received your request and will reach out shortly.
         </div>
       ) : (
@@ -94,7 +90,7 @@ export const QuoteForm = ({
         >
           <div className="grid gap-3 md:grid-cols-2">
             <div className="grid gap-1">
-              <label className="text-sm font-medium text-slate-700" htmlFor={`${formId}-name`}>
+              <label className="text-sm font-medium text-brand-slate" htmlFor={`${formId}-name`}>
                 Name
               </label>
               <input
@@ -104,12 +100,12 @@ export const QuoteForm = ({
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+                className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
                 placeholder="Your full name"
               />
             </div>
             <div className="grid gap-1">
-              <label className="text-sm font-medium text-slate-700" htmlFor={`${formId}-phone`}>
+              <label className="text-sm font-medium text-brand-slate" htmlFor={`${formId}-phone`}>
                 Phone
               </label>
               <input
@@ -119,13 +115,13 @@ export const QuoteForm = ({
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+                className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
                 placeholder="(918) 555-1234"
               />
             </div>
           </div>
           <div className="grid gap-1">
-            <label className="text-sm font-medium text-slate-700" htmlFor={`${formId}-address`}>
+            <label className="text-sm font-medium text-brand-slate" htmlFor={`${formId}-address`}>
               Service Address
             </label>
             <input
@@ -135,12 +131,12 @@ export const QuoteForm = ({
               required
               value={formData.address}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+              className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
               placeholder="Street address, city"
             />
           </div>
           <div className="grid gap-1">
-            <label className="text-sm font-medium text-slate-700" htmlFor={`${formId}-message`}>
+            <label className="text-sm font-medium text-brand-slate" htmlFor={`${formId}-message`}>
               Message
             </label>
             <textarea
@@ -149,18 +145,18 @@ export const QuoteForm = ({
               rows={compact ? 3 : 4}
               value={formData.message}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+              className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
               placeholder="Tell us about your lawn goals"
             />
           </div>
           <button
             type="submit"
             disabled={status === "loading"}
-            className="inline-flex items-center justify-center rounded-full bg-brand-700 px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-70"
+            className="btn-primary disabled:cursor-not-allowed disabled:opacity-70"
           >
             {status === "loading" ? "Submitting..." : "Request My Quote"}
           </button>
-          <p id={`${formId}-status`} className="text-xs text-slate-500">
+          <p id={`${formId}-status`} className="text-xs text-brand-slate">
             {status === "error" && errorMessage
               ? errorMessage
               : "We respond quickly during business hours."}

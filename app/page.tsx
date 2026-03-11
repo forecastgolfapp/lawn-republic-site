@@ -44,39 +44,37 @@ const reviews = [
 export default function HomePage() {
   return (
     <div>
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden border-b border-brand-gold/30">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-              Tulsa-area lawn care
-            </p>
-            <h1 className="font-display text-4xl text-slate-900 sm:text-5xl">
+            <p className="kicker">Tulsa-area lawn care</p>
+            <h1 className="font-display text-4xl text-brand-navy sm:text-5xl">
               A greener, weed-free lawn without the hassle.
             </h1>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-brand-slate">
               Lawn Republic delivers premium weed control, fertilization, and seasonal
               care built specifically for Tulsa, Bixby, Jenks, and Broken Arrow.
             </p>
             <div className="flex flex-wrap gap-3">
               <CallButton
-                className="rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-800"
+                className="btn-primary"
                 eventLabel="home_hero"
               />
               <Link
                 href="#quote-form"
-                className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-brand-400 hover:text-brand-700"
+                className="btn-outline"
               >
                 Get a Quote
               </Link>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-              <span className="rounded-full bg-white/80 px-3 py-1 shadow-sm">
+            <div className="flex flex-wrap gap-4 text-sm text-brand-slate">
+              <span className="rounded-full border border-brand-gold/30 bg-white/80 px-3 py-1 shadow-sm">
                 Locally owned
               </span>
-              <span className="rounded-full bg-white/80 px-3 py-1 shadow-sm">
+              <span className="rounded-full border border-brand-gold/30 bg-white/80 px-3 py-1 shadow-sm">
                 Trusted by Tulsa homeowners
               </span>
-              <span className="rounded-full bg-white/80 px-3 py-1 shadow-sm">
+              <span className="rounded-full border border-brand-gold/30 bg-white/80 px-3 py-1 shadow-sm">
                 Consistent seasonal visits
               </span>
             </div>
@@ -92,15 +90,11 @@ export default function HomePage() {
           {steps.map((step) => (
             <div
               key={step.title}
-              className="rounded-3xl border border-white/70 bg-white/70 p-6 shadow-soft"
+              className="card"
             >
-              <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-                How it works
-              </p>
-              <h3 className="mt-2 font-display text-2xl text-slate-900">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">{step.description}</p>
+              <p className="kicker">How it works</p>
+              <h3 className="mt-2 font-display text-2xl text-brand-navy">{step.title}</h3>
+              <p className="mt-2 text-sm text-brand-slate">{step.description}</p>
             </div>
           ))}
         </div>
@@ -109,13 +103,9 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-12">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
-              Why Lawn Republic
-            </p>
-            <h2 className="font-display text-3xl text-slate-900">
-              Premium care with a local, reliable team.
-            </h2>
-            <p className="text-sm text-slate-600">
+            <p className="kicker">Why Lawn Republic</p>
+            <h2 className="section-title">Premium care with a local, reliable team.</h2>
+            <p className="text-sm text-brand-slate">
               We build lawn programs to fit Oklahoma turf, weather, and weed pressure.
               You get consistent timing, clear communication, and results that last.
             </p>
@@ -124,7 +114,7 @@ export default function HomePage() {
             {benefits.map((benefit) => (
               <div
                 key={benefit}
-                className="rounded-2xl border border-white/70 bg-white/80 p-4 text-sm text-slate-700 shadow-soft"
+                className="rounded-2xl border border-brand-gold/30 bg-white/90 p-4 text-sm text-brand-slate shadow-soft"
               >
                 {benefit}
               </div>
@@ -134,21 +124,21 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12">
-        <div className="rounded-3xl border border-white/60 bg-white/70 p-8 shadow-soft">
+        <div className="rounded-3xl border border-brand-gold/40 bg-brand-navy/95 p-8 text-brand-cream shadow-soft">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-gold">
                 Service Area
               </p>
-              <h3 className="font-display text-2xl text-slate-900">
+              <h3 className="font-display text-2xl text-brand-cream">
                 Serving {SERVICE_AREAS.join(", ")}
               </h3>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-brand-cream/80">
                 Consistent routes across the Tulsa metro so you get reliable timing.
               </p>
             </div>
             <CallButton
-              className="rounded-full bg-brand-700 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-800"
+              className="btn-gold"
               eventLabel="home_service_area"
               label="Call for Availability"
             />
@@ -161,12 +151,12 @@ export default function HomePage() {
           {reviews.map((review) => (
             <figure
               key={review.name}
-              className="rounded-3xl border border-white/70 bg-white/80 p-6 shadow-soft"
+              className="rounded-3xl border border-brand-gold/30 bg-white/90 p-6 shadow-soft"
             >
-              <blockquote className="text-sm text-slate-600">
+              <blockquote className="text-sm text-brand-slate">
                 "{review.quote}"
               </blockquote>
-              <figcaption className="mt-3 text-xs font-semibold uppercase tracking-wide text-brand-700">
+              <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand-green">
                 {review.name}
               </figcaption>
             </figure>

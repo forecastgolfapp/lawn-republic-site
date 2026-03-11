@@ -4,11 +4,14 @@
 
 :root {
   color-scheme: light;
-  --foreground: #0f172a;
-  --background: #f7fbf7;
-  --background-accent: #f3ece2;
-  --font-sans: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
-  --font-display: "Playfair Display", "Georgia", serif;
+  --foreground: #0b1f4d;
+  --background: #f7f3ea;
+  --background-accent: #f2efe7;
+  --brand-green: #2e7d32;
+  --brand-navy: #0b1f4d;
+  --brand-gold: #f5c400;
+  --font-body-fallback: "Source Sans 3", "Helvetica Neue", sans-serif;
+  --font-display-fallback: "Cormorant Garamond", "Georgia", serif;
 }
 
 * {
@@ -17,23 +20,31 @@
 
 @layer base {
   body {
-    font-family: var(--font-sans);
+    font-family: var(--font-body), var(--font-body-fallback);
   }
 
   .font-display {
-    font-family: var(--font-display);
+    font-family: var(--font-display), var(--font-display-fallback);
   }
 }
 
 body {
   color: var(--foreground);
-  background: radial-gradient(circle at top, rgba(147, 219, 183, 0.25), transparent 55%),
-    linear-gradient(180deg, var(--background) 0%, #ffffff 45%, var(--background-accent) 100%);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at top, rgba(245, 196, 0, 0.14), transparent 55%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(46, 125, 50, 0.05) 0,
+      rgba(46, 125, 50, 0.05) 1px,
+      transparent 1px,
+      transparent 24px
+    );
   min-height: 100vh;
 }
 
 ::selection {
-  background: rgba(87, 197, 141, 0.35);
+  background: rgba(245, 196, 0, 0.35);
 }
 
 a {
@@ -44,4 +55,30 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-brand-cream shadow-soft transition hover:bg-brand-navy;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-green px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-brand-green hover:text-brand-cream;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-navy shadow-soft transition hover:bg-brand-navy hover:text-brand-gold;
+  }
+
+  .card {
+    @apply rounded-3xl border border-brand-gold/30 bg-white/90 p-6 shadow-card backdrop-blur;
+  }
+
+  .kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.32em] text-brand-green;
+  }
+
+  .section-title {
+    @apply font-display text-3xl text-brand-navy;
+  }
 }

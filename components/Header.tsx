@@ -9,10 +9,10 @@ import {
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/lawn-treatment", label: "Lawn Treatment" },
+  { href: "/faq", label: "FAQ" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ] as const;
-// FAQ link will be added back in Section 5 once /faq page exists.
 
 export const Header = () => {
   return (

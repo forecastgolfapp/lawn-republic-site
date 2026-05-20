@@ -7,6 +7,7 @@ import { RepeatedQuoteCta } from "@/components/RepeatedQuoteCta";
 import { TrustStrip } from "@/components/TrustStrip";
 import { Guarantee } from "@/components/Guarantee";
 import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
+import { WhatToExpect } from "@/components/WhatToExpect";
 
 const steps = [
   {
@@ -176,8 +177,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials — labeled placeholders */}
+      {/* What to expect — short post-signup explainer */}
       <section className="section-alt">
+        <div className="mx-auto w-full max-w-6xl px-4 py-14">
+          <WhatToExpect />
+        </div>
+      </section>
+
+      {/* Testimonials — labeled placeholders */}
+      <section className="bg-white">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <div className="mb-8 space-y-2">
             <p className="kicker">Customer reviews</p>

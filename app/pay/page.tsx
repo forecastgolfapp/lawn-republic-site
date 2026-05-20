@@ -46,7 +46,7 @@ export default function PayPage() {
                 Call {PHONE_DISPLAY}
               </a>
             </div>
-            <div className="rounded-2xl border border-brand-gold/30 bg-white/90 p-4 text-sm text-brand-slate shadow-soft">
+            <div className="rounded-2xl border border-brand-border bg-white/90 p-4 text-sm text-brand-slate shadow-soft">
               <p className="font-semibold text-brand-navy">What you can do in the portal</p>
               <ul className="mt-2 list-inside list-disc space-y-1">
                 <li>Pay invoices with card or ACH</li>
@@ -65,7 +65,7 @@ export default function PayPage() {
               </p>
             </div>
             {SHOW_VENMO_QR ? (
-              <div className="overflow-hidden rounded-2xl border border-brand-gold/30 bg-brand-cream">
+              <div className="overflow-hidden rounded-2xl border border-brand-border bg-brand-offwhite">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/venmo-qr.jpeg"
@@ -76,7 +76,7 @@ export default function PayPage() {
                 />
               </div>
             ) : (
-              <div className="rounded-2xl border border-dashed border-brand-gold/40 bg-brand-cream/60 p-5 text-sm text-brand-slate">
+              <div className="rounded-2xl border border-dashed border-brand-border bg-brand-offwhite p-5 text-sm text-brand-slate">
                 <p className="font-semibold text-brand-navy">QR code coming soon.</p>
                 <p className="mt-1">
                   In the meantime, open Venmo and search{" "}
@@ -101,13 +101,13 @@ export default function PayPage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 pb-16">
-        <div className="rounded-3xl border border-brand-gold/40 bg-brand-navy/95 p-8 text-brand-cream shadow-soft">
+        <div className="rounded-3xl border border-brand-border bg-brand-navy/95 p-8 text-white shadow-soft">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-gold">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-green">
                 Questions about your bill?
               </p>
-              <h2 className="font-display text-2xl text-brand-cream">
+              <h2 className="font-display text-2xl text-white">
                 Existing customers get fastest help through our support form.
               </h2>
             </div>

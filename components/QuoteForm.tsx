@@ -80,7 +80,7 @@ export const QuoteForm = ({
         <p className="text-sm text-brand-slate">{subtitle}</p>
       </div>
       {status === "success" ? (
-        <div className="rounded-2xl border border-brand-gold/40 bg-brand-cream p-4 text-sm text-brand-navy">
+        <div className="rounded-2xl border border-brand-border bg-brand-offwhite p-4 text-sm text-brand-navy">
           Thanks! We received your request and will reach out shortly.
         </div>
       ) : (
@@ -101,7 +101,7 @@ export const QuoteForm = ({
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+                className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
                 placeholder="Your full name"
               />
             </div>
@@ -116,7 +116,7 @@ export const QuoteForm = ({
                 required
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+                className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
                 placeholder="(918) 555-1234"
               />
             </div>
@@ -132,7 +132,7 @@ export const QuoteForm = ({
               required
               value={formData.address}
               onChange={handleChange}
-              className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+              className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
               placeholder="Street address, city"
             />
           </div>
@@ -146,7 +146,7 @@ export const QuoteForm = ({
               rows={compact ? 3 : 4}
               value={formData.message}
               onChange={handleChange}
-              className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+              className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
               placeholder="Tell us about your lawn goals"
             />
           </div>

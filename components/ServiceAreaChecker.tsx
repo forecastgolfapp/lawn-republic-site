@@ -8,7 +8,7 @@ type BadgeState = "idle" | "invalid" | "match" | "no-match";
 const BADGE_COPY: Record<BadgeState, { text: string; className: string }> = {
   idle: {
     text: "Enter a 5-digit ZIP",
-    className: "border-brand-gold/30 bg-white/80 text-brand-slate"
+    className: "border-brand-border bg-white/80 text-brand-slate"
   },
   invalid: {
     text: "Enter 5 digits",
@@ -16,7 +16,7 @@ const BADGE_COPY: Record<BadgeState, { text: string; className: string }> = {
   },
   match: {
     text: "Yes — we service this ZIP",
-    className: "border-brand-green/40 bg-emerald-50 text-brand-pine"
+    className: "border-brand-green/40 bg-emerald-50 text-brand-green"
   },
   "no-match": {
     text: "Not yet — outside current service area",
@@ -39,16 +39,16 @@ export const ServiceAreaChecker = () => {
   const badge = BADGE_COPY[state];
 
   return (
-    <div className="rounded-3xl border border-brand-gold/40 bg-brand-navy/95 p-8 text-brand-cream shadow-soft">
+    <div className="rounded-3xl border border-brand-border bg-brand-navy/95 p-8 text-white shadow-soft">
       <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div className="space-y-2">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-gold">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-green">
             Service Area
           </p>
-          <h3 className="font-display text-2xl text-brand-cream">
+          <h3 className="font-display text-2xl text-white">
             Serving {SERVICE_AREAS.join(", ")} — check your ZIP
           </h3>
-          <p className="text-sm text-brand-cream/80">
+          <p className="text-sm text-white/80">
             Type your ZIP code to see if your home is on our current route. If
             you're nearby, send a quote request anyway — we expand routes often.
           </p>
@@ -78,11 +78,11 @@ export const ServiceAreaChecker = () => {
               onChange={(event) => setZip(normalizeZip(event.target.value))}
               placeholder="e.g., 74133"
               aria-label="ZIP code"
-              className="flex-1 min-w-[10rem] rounded-xl border border-brand-gold/30 bg-white px-4 py-2.5 text-sm shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+              className="flex-1 min-w-[10rem] rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
             />
             <button
               type="submit"
-              className="rounded-full bg-brand-green px-5 py-2.5 text-sm font-semibold text-brand-cream shadow-soft transition hover:bg-brand-navy"
+              className="rounded-full bg-brand-green px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-navy"
             >
               Continue
             </button>

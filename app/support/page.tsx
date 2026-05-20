@@ -35,7 +35,7 @@ export default function SupportPage() {
                 Customer Portal
               </a>
             </div>
-            <div className="rounded-2xl border border-brand-gold/30 bg-white/90 p-4 text-sm text-brand-slate shadow-soft">
+            <div className="rounded-2xl border border-brand-border bg-white/90 p-4 text-sm text-brand-slate shadow-soft">
               <p className="font-semibold text-brand-navy">Not a customer yet?</p>
               <p className="mt-1">
                 Head to the <Link href="/#quote-form" className="font-semibold text-brand-green underline">quote form</Link> to get started.

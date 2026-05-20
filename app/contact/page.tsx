@@ -1,5 +1,6 @@
 import { CallButton } from "@/components/CallButton";
 import { QuoteForm } from "@/components/QuoteForm";
+import { RepeatedQuoteCta } from "@/components/RepeatedQuoteCta";
 import {
   BUSINESS_HOURS,
   EMAIL,
@@ -27,7 +28,7 @@ export default function ContactPage() {
               eventLabel="contact_hero"
               label={`Call ${PHONE_DISPLAY}`}
             />
-            <div className="rounded-2xl border border-brand-gold/30 bg-white/90 p-4 text-sm text-brand-slate shadow-soft">
+            <div className="card">
               <p>Hours: {BUSINESS_HOURS}</p>
               <p>Service area: {SERVICE_AREAS.join(", ")}</p>
               <p>
@@ -40,6 +41,15 @@ export default function ContactPage() {
           </div>
           <QuoteForm source="contact" />
         </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-16">
+        <RepeatedQuoteCta
+          heading="Faster route to a quote: call us."
+          subtext="Most quotes go out the same business day."
+          variant="navy"
+          eventLabel="contact_footer"
+        />
       </section>
     </div>
   );

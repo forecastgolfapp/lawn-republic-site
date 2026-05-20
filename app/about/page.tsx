@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CallButton } from "@/components/CallButton";
+import { RepeatedQuoteCta } from "@/components/RepeatedQuoteCta";
 import { SERVICE_AREAS } from "@/lib/site";
 
 const values = [
@@ -37,15 +38,12 @@ export default function AboutPage() {
                 className="btn-primary"
                 eventLabel="about_hero"
               />
-              <Link
-                href="/contact"
-                className="btn-outline"
-              >
-                Request a Quote
+              <Link href="/#quote-form" className="btn-outline">
+                Get My Free Quote
               </Link>
             </div>
           </div>
-          <div className="rounded-3xl border border-brand-gold/40 bg-white/90 p-6 shadow-soft">
+          <div className="card">
             <p className="kicker">Serving Tulsa metro</p>
             <p className="mt-3 text-sm text-brand-slate">
               Our routes cover {SERVICE_AREAS.join(", ")}, giving you reliable seasonal
@@ -58,18 +56,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-16">
+      <section className="mx-auto w-full max-w-6xl px-4 pb-12">
         <div className="grid gap-6 md:grid-cols-3">
           {values.map((value) => (
-            <div
-              key={value.title}
-              className="rounded-3xl border border-brand-gold/30 bg-white/90 p-6 shadow-soft"
-            >
+            <div key={value.title} className="card">
               <h3 className="font-display text-2xl text-brand-navy">{value.title}</h3>
               <p className="mt-2 text-sm text-brand-slate">{value.description}</p>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-16">
+        <RepeatedQuoteCta
+          heading="Want us on your lawn next?"
+          subtext="It starts with a free quote. Get yours in under 60 seconds."
+          variant="navy"
+          eventLabel="about_footer"
+        />
       </section>
     </div>
   );

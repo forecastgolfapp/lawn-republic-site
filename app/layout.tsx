@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
+import { StickyMobileCta } from "@/components/StickyMobileCta";
 import {
   BUSINESS_CITY,
   BUSINESS_HOURS,
@@ -108,8 +109,9 @@ export default function RootLayout({
         />
         <Analytics />
         <Header />
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="pb-20 md:pb-0">{children}</main>
         <Footer />
+        <StickyMobileCta />
       </body>
     </html>
   );

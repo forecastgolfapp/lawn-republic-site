@@ -92,7 +92,7 @@ export const SupportForm = () => {
   if (status === "success") {
     return (
       <div className="card">
-        <div className="rounded-2xl border border-brand-gold/40 bg-brand-cream p-5 text-sm text-brand-navy">
+        <div className="rounded-2xl border border-brand-border bg-brand-offwhite p-5 text-sm text-brand-navy">
           <p className="font-semibold">Support request sent.</p>
           <p className="mt-1">
             We'll pull up your account in RealGreen and follow up shortly.
@@ -124,7 +124,7 @@ export const SupportForm = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+            className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
             placeholder="Full name"
           />
         </div>
@@ -140,7 +140,7 @@ export const SupportForm = () => {
             autoComplete="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+            className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
             placeholder="you@example.com"
           />
         </div>
@@ -158,7 +158,7 @@ export const SupportForm = () => {
             autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+            className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
             placeholder="(918) 555-1234"
           />
         </div>
@@ -173,7 +173,7 @@ export const SupportForm = () => {
             required
             value={formData.customerId}
             onChange={handleChange}
-            className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+            className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
             placeholder="From your invoice"
           />
         </div>
@@ -185,7 +185,7 @@ export const SupportForm = () => {
           {TOPIC_OPTIONS.map((topic) => (
             <label
               key={topic}
-              className="flex cursor-pointer items-center gap-2 rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm"
+              className="flex cursor-pointer items-center gap-2 rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm"
             >
               <input
                 type="checkbox"
@@ -210,7 +210,7 @@ export const SupportForm = () => {
           maxLength={300}
           value={formData.notes}
           onChange={handleChange}
-          className="w-full rounded-xl border border-brand-gold/30 bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
+          className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
           placeholder="A few sentences about your issue (300 characters max)"
         />
       </div>

@@ -4,12 +4,15 @@
 
 :root {
   color-scheme: light;
-  --foreground: #0b1f4d;
-  --background: #f7f3ea;
-  --background-accent: #f2efe7;
-  --brand-green: #2e7d32;
-  --brand-navy: #0b1f4d;
-  --brand-gold: #f5c400;
+  --brand-navy: #16265C;
+  --brand-navy-hover: #0F1B45;
+  --brand-green: #1F9D3C;
+  --brand-green-hover: #17802F;
+  --bg-white: #FFFFFF;
+  --bg-offwhite: #F6F7F4;
+  --brand-border: #E3E5DE;
+  --foreground: var(--brand-navy);
+  --background: var(--bg-white);
   --font-body-fallback: "Source Sans 3", "Helvetica Neue", sans-serif;
   --font-display-fallback: "Cormorant Garamond", "Georgia", serif;
 }
@@ -21,57 +24,63 @@
 @layer base {
   body {
     font-family: var(--font-body), var(--font-body-fallback);
+    color: var(--foreground);
+    background-color: var(--background);
+    min-height: 100vh;
   }
 
   .font-display {
     font-family: var(--font-display), var(--font-display-fallback);
   }
-}
 
-body {
-  color: var(--foreground);
-  background-color: var(--background);
-  background-image:
-    radial-gradient(circle at top, rgba(245, 196, 0, 0.14), transparent 55%),
-    repeating-linear-gradient(
-      135deg,
-      rgba(46, 125, 50, 0.05) 0,
-      rgba(46, 125, 50, 0.05) 1px,
-      transparent 1px,
-      transparent 24px
-    );
-  min-height: 100vh;
+  h1, h2, h3, h4 {
+    color: var(--brand-navy);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
 }
 
 ::selection {
-  background: rgba(245, 196, 0, 0.35);
-}
-
-a {
-  text-decoration: none;
-}
-
-input,
-textarea,
-select {
-  font: inherit;
+  background: rgba(31, 157, 60, 0.25);
+  color: var(--brand-navy);
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-brand-cream shadow-soft transition hover:bg-brand-navy;
+    @apply inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white shadow-soft transition;
   }
+  .btn-primary:hover { background-color: var(--brand-green-hover); }
+
+  .btn-primary-lg {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-green px-7 py-4 text-base font-semibold text-white shadow-soft transition;
+  }
+  .btn-primary-lg:hover { background-color: var(--brand-green-hover); }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-green px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-brand-green hover:text-brand-cream;
+    @apply inline-flex items-center justify-center rounded-full border border-brand-green px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-brand-green hover:text-white;
   }
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-navy px-6 py-3 text-sm font-semibold text-white shadow-soft transition;
+  }
+  .btn-navy:hover { background-color: var(--brand-navy-hover); }
 
   .btn-gold {
-    @apply inline-flex items-center justify-center rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-brand-navy shadow-soft transition hover:bg-brand-navy hover:text-brand-gold;
+    /* Legacy class — points at the primary green so any old usage stays functional */
+    @apply inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white shadow-soft transition;
   }
+  .btn-gold:hover { background-color: var(--brand-green-hover); }
 
   .card {
-    @apply rounded-3xl border border-brand-gold/30 bg-white/90 p-6 shadow-card backdrop-blur;
+    @apply rounded-3xl border border-brand-border bg-white p-6 shadow-card;
   }
 
   .kicker {
@@ -80,5 +89,10 @@ select {
 
   .section-title {
     @apply font-display text-3xl text-brand-navy;
+  }
+
+  /* Section background helper to alternate white / off-white visual rhythm. */
+  .section-alt {
+    @apply bg-brand-offwhite;
   }
 }

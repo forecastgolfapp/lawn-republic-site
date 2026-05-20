@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
@@ -9,6 +8,10 @@ import {
   VENMO_URL,
   VENMO_USERNAME
 } from "@/lib/site";
+
+// When the new Venmo QR is ready, drop it at /public/venmo-qr.jpeg
+// and flip this to true to show the QR card again.
+const SHOW_VENMO_QR = false;
 
 export const metadata: Metadata = {
   title: `Pay Your Bill | ${SITE_NAME}`,
@@ -57,18 +60,31 @@ export default function PayPage() {
             <div>
               <p className="kicker">Or pay via Venmo</p>
               <p className="mt-2 text-sm text-brand-slate">
-                Open Venmo and pay <span className="font-semibold text-brand-navy">@{VENMO_USERNAME}</span>.
+                Open Venmo and pay{" "}
+                <span className="font-semibold text-brand-navy">@{VENMO_USERNAME}</span>.
               </p>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-brand-gold/30 bg-brand-cream">
-              <Image
-                src="/venmo-qr.jpeg"
-                alt="Venmo QR code for Lawn Republic"
-                width={600}
-                height={600}
-                className="h-auto w-full"
-              />
-            </div>
+            {SHOW_VENMO_QR ? (
+              <div className="overflow-hidden rounded-2xl border border-brand-gold/30 bg-brand-cream">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/venmo-qr.jpeg"
+                  alt="Venmo QR code for Lawn Republic"
+                  width={600}
+                  height={600}
+                  className="h-auto w-full"
+                />
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-brand-gold/40 bg-brand-cream/60 p-5 text-sm text-brand-slate">
+                <p className="font-semibold text-brand-navy">QR code coming soon.</p>
+                <p className="mt-1">
+                  In the meantime, open Venmo and search{" "}
+                  <span className="font-semibold text-brand-navy">@{VENMO_USERNAME}</span>{" "}
+                  to send payment.
+                </p>
+              </div>
+            )}
             <a
               href={VENMO_URL}
               target="_blank"

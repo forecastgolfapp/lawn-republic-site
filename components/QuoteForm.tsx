@@ -7,7 +7,8 @@ const INITIAL_FORM = {
   name: "",
   phone: "",
   address: "",
-  message: ""
+  message: "",
+  _gotcha: ""
 };
 
 type QuoteFormProps = {
@@ -149,6 +150,17 @@ export const QuoteForm = ({
               placeholder="Tell us about your lawn goals"
             />
           </div>
+          {/* Honeypot — humans leave blank; bots fill it */}
+          <input
+            type="text"
+            name="_gotcha"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData._gotcha}
+            onChange={handleChange}
+            className="hidden"
+            aria-hidden="true"
+          />
           <button
             type="submit"
             disabled={status === "loading"}

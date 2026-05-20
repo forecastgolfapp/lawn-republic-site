@@ -12,34 +12,52 @@ const includedItems = [
 
 const programSteps = [
   {
-    season: "Early Spring",
-    title: "Pre-emergent foundation",
-    description: "Stops new weeds before they sprout and wakes up the turf."
+    season: "Early Spring (Feb–Mar)",
+    title: "Pre-Emergent + Post Control",
+    bermuda: "Specticle FLO (pre-emergent) + RoundUp for existing winter weeds.",
+    fescue: "Barricade 4FL + 3-Way Broadleaf Weed Control + High-Nitrogen Fertilizer.",
+    details:
+      "Builds the first barrier against crabgrass, spurge, and annual bluegrass. Encourages early fescue green-up."
   },
   {
-    season: "Mid Spring",
-    title: "Weed control + fertilizer",
-    description: "Targets existing weeds and feeds for steady growth."
+    season: "Late Spring (Apr–May)",
+    title: "Pre-Emergent + Weed Control",
+    bermuda: "Barricade 4FL + 3-Way Broadleaf Weed Control.",
+    fescue: "Barricade 4FL + 3-Way Broadleaf Weed Control + High-Nitrogen Fertilizer.",
+    details:
+      "Extends crabgrass prevention and strengthens turf for summer stress."
   },
   {
-    season: "Early Summer",
-    title: "Heat-stress support",
-    description: "Keeps turf strong through Oklahoma heat."
+    season: "Early Summer (June)",
+    title: "Fertilizer + Weed Control",
+    bermuda: "High-Nitrogen Fertilizer + spot treatment of weeds.",
+    fescue: "Preventative Fungicide + spot treatment of weeds.",
+    details:
+      "Feeds Bermuda during peak growth while cleaning up emerging weeds. Protects fescue from brown patch."
   },
   {
-    season: "Mid Summer",
-    title: "Spot control",
-    description: "Knocks out breakthrough weeds and reinforces coverage."
+    season: "Mid-Summer (Jul–Aug)",
+    title: "Turf Maintenance",
+    bermuda: "High-Nitrogen Fertilizer + spot treatment of weeds.",
+    fescue: "Preventative Fungicide + spot treatment of weeds.",
+    details:
+      "Keeps Bermuda dense and green through heat. Continues fungus protection for fescue."
   },
   {
-    season: "Early Fall",
-    title: "Recovery + nutrition",
-    description: "Builds density and color after summer stress."
+    season: "Late Summer (Aug–Sep)",
+    title: "Turf Recovery",
+    bermuda: "High-Nitrogen Fertilizer + spot treatment of weeds.",
+    fescue: "Preventative Fungicide + spot treatment of weeds.",
+    details:
+      "Final fertilizer push for Bermuda before dormancy. Fescue receives disease prevention and last pre-seeding cleanup."
   },
   {
-    season: "Late Fall",
-    title: "Winter prep",
-    description: "Stores nutrients for a strong spring green-up."
+    season: "Fall (Oct–Nov)",
+    title: "Pre-Emergent + Winter Weed Control",
+    bermuda: "Simazine 4L + 3-Way Broadleaf Weed Control.",
+    fescue: "High-Nitrogen Fertilizer + spot treatment of weeds.",
+    details:
+      "Builds fall barrier against henbit and chickweed for Bermuda; improves winter color for fescue."
   }
 ];
 
@@ -142,7 +160,17 @@ export default function LawnTreatmentPage() {
                   {step.season}
                 </p>
                 <h3 className="mt-2 font-display text-xl text-brand-navy">{step.title}</h3>
-                <p className="mt-2 text-sm text-brand-slate">{step.description}</p>
+                <dl className="mt-3 space-y-2 text-sm text-brand-slate">
+                  <div>
+                    <dt className="font-semibold text-brand-navy">Bermuda</dt>
+                    <dd>{step.bermuda}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-brand-navy">Fescue</dt>
+                    <dd>{step.fescue}</dd>
+                  </div>
+                </dl>
+                <p className="mt-3 text-sm text-brand-slate">{step.details}</p>
               </div>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CallButton } from "@/components/CallButton";
 import { QuoteForm } from "@/components/QuoteForm";
-import { SERVICE_AREAS } from "@/lib/site";
+import { ServiceAreaChecker } from "@/components/ServiceAreaChecker";
 
 const steps = [
   {
@@ -124,26 +124,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12">
-        <div className="rounded-3xl border border-brand-gold/40 bg-brand-navy/95 p-8 text-brand-cream shadow-soft">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-gold">
-                Service Area
-              </p>
-              <h3 className="font-display text-2xl text-brand-cream">
-                Serving {SERVICE_AREAS.join(", ")}
-              </h3>
-              <p className="text-sm text-brand-cream/80">
-                Consistent routes across the Tulsa metro so you get reliable timing.
-              </p>
-            </div>
-            <CallButton
-              className="btn-gold"
-              eventLabel="home_service_area"
-              label="Call for Availability"
-            />
-          </div>
-        </div>
+        <ServiceAreaChecker />
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-12">

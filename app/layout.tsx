@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
+import {
+  BUSINESS_CITY,
+  BUSINESS_HOURS,
+  BUSINESS_POSTAL,
+  BUSINESS_REGION,
+  BUSINESS_STREET,
+  EMAIL,
+  PHONE_DISPLAY,
+  SERVICE_AREAS,
+  SITE_NAME,
+  SITE_URL
+} from "@/lib/site";
 
 const bodyFont = Source_Sans_3({
   subsets: ["latin"],
@@ -20,16 +33,64 @@ const displayFont = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Lawn Republic | Tulsa Weed Control & Fertilization",
+  title: `${SITE_NAME} | Tulsa Weed Control & Fertilization`,
   description:
     "Premium weed control, fertilization, and pre-emergent programs for Tulsa, Bixby, Jenks, and Broken Arrow homes.",
-  metadataBase: new URL("https://www.lawnrepublic.com"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/"
+  },
+  icons: {
+    icon: "/logo-lawnrepublic.jpeg",
+    apple: "/logo-lawnrepublic.jpeg"
+  },
   openGraph: {
-    title: "Lawn Republic",
+    title: SITE_NAME,
     description:
       "Locally owned lawn care programs that keep Tulsa lawns green, weed-free, and healthy.",
-    type: "website"
+    type: "website",
+    url: SITE_URL,
+    images: ["/logo-lawnrepublic.jpeg"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description:
+      "Locally owned lawn care programs that keep Tulsa lawns green, weed-free, and healthy.",
+    images: ["/logo-lawnrepublic.jpeg"]
   }
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: SITE_NAME,
+  image: `${SITE_URL}/logo-lawnrepublic.jpeg`,
+  url: SITE_URL,
+  telephone: PHONE_DISPLAY,
+  email: EMAIL,
+  description:
+    "Locally owned weed control and fertilization in Tulsa, Bixby, Jenks, and Broken Arrow.",
+  areaServed: SERVICE_AREAS.map((city) => ({
+    "@type": "City",
+    name: city,
+    addressRegion: "OK"
+  })),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: BUSINESS_STREET,
+    addressLocality: BUSINESS_CITY,
+    addressRegion: BUSINESS_REGION,
+    postalCode: BUSINESS_POSTAL,
+    addressCountry: "US"
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "07:00",
+    closes: "15:00"
+  },
+  hoursAvailable: BUSINESS_HOURS
 };
 
 export default function RootLayout({
@@ -40,9 +101,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${displayFont.variable} antialiased`}>
+        <Script
+          id="local-business-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <Analytics />
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

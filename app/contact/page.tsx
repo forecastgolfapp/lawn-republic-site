@@ -1,6 +1,12 @@
 import { CallButton } from "@/components/CallButton";
 import { QuoteForm } from "@/components/QuoteForm";
-import { PHONE_DISPLAY, SERVICE_AREAS } from "@/lib/site";
+import {
+  BUSINESS_HOURS,
+  EMAIL,
+  EMAIL_HREF,
+  PHONE_DISPLAY,
+  SERVICE_AREAS
+} from "@/lib/site";
 
 export default function ContactPage() {
   return (
@@ -22,8 +28,14 @@ export default function ContactPage() {
               label={`Call ${PHONE_DISPLAY}`}
             />
             <div className="rounded-2xl border border-brand-gold/30 bg-white/90 p-4 text-sm text-brand-slate shadow-soft">
-              <p>Hours: Mon-Fri 8am-6pm (placeholder)</p>
+              <p>Hours: {BUSINESS_HOURS}</p>
               <p>Service area: {SERVICE_AREAS.join(", ")}</p>
+              <p>
+                Email:{" "}
+                <a href={EMAIL_HREF} className="font-semibold text-brand-green">
+                  {EMAIL}
+                </a>
+              </p>
             </div>
           </div>
           <QuoteForm source="contact" />

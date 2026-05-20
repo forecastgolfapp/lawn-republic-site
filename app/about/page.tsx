@@ -52,7 +52,7 @@ export default function AboutPage() {
               visits and fast support.
             </p>
             <p className="mt-4 text-xs text-brand-slate">
-              Locally owned - Licensed & insured (placeholder)
+              Locally owned &middot; Licensed &amp; insured
             </p>
           </div>
         </div>

@@ -4,6 +4,9 @@ import { ServiceAreaChecker } from "@/components/ServiceAreaChecker";
 import { ZipHeroCta } from "@/components/ZipHeroCta";
 import { HeroImage } from "@/components/HeroImage";
 import { RepeatedQuoteCta } from "@/components/RepeatedQuoteCta";
+import { TrustStrip } from "@/components/TrustStrip";
+import { Guarantee } from "@/components/Guarantee";
+import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
 
 const steps = [
   {
@@ -69,6 +72,16 @@ export default function HomePage() {
             </div>
           </div>
           <HeroImage />
+        </div>
+      </section>
+
+      {/* Trust strip — sits flush under the hero */}
+      <TrustStrip />
+
+      {/* Guarantee — high on the page, immediately under trust strip */}
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-6xl px-4 py-10">
+          <Guarantee />
         </div>
       </section>
 
@@ -156,6 +169,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Before / After gallery */}
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-6xl px-4 py-14">
+          <BeforeAfterGallery />
+        </div>
+      </section>
+
       {/* Testimonials — labeled placeholders */}
       <section className="section-alt">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
@@ -170,7 +190,7 @@ export default function HomePage() {
           <div className="grid gap-6 lg:grid-cols-3">
             {reviews.map((review, index) => (
               <figure key={index} className="card">
-                <blockquote className="text-sm text-brand-slate">"{review.quote}"</blockquote>
+                <blockquote className="text-sm text-brand-slate">&ldquo;{review.quote}&rdquo;</blockquote>
                 <figcaption className="mt-3 text-xs font-semibold uppercase tracking-[0.28em] text-brand-green">
                   {review.name}
                 </figcaption>

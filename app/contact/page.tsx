@@ -1,6 +1,5 @@
 import { CallButton } from "@/components/CallButton";
 import { QuoteForm } from "@/components/QuoteForm";
-import { RepeatedQuoteCta } from "@/components/RepeatedQuoteCta";
 import {
   BUSINESS_HOURS,
   EMAIL,
@@ -41,15 +40,6 @@ export default function ContactPage() {
           </div>
           <QuoteForm source="contact" />
         </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-6xl px-4 pb-16">
-        <RepeatedQuoteCta
-          heading="Faster route to a quote: call us."
-          subtext="Most quotes go out the same business day."
-          variant="navy"
-          eventLabel="contact_footer"
-        />
       </section>
     </div>
   );

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { CallButton } from "@/components/CallButton";
-import { RepeatedQuoteCta } from "@/components/RepeatedQuoteCta";
 import { SERVICE_AREAS } from "@/lib/site";
 
 const values = [
@@ -67,14 +66,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-4 pb-16">
-        <RepeatedQuoteCta
-          heading="Want us on your lawn next?"
-          subtext="It starts with a free quote. Get yours in under 60 seconds."
-          variant="navy"
-          eventLabel="about_footer"
-        />
-      </section>
     </div>
   );
 }

@@ -129,19 +129,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Repeated CTA #1 — after services */}
-      <section className="bg-white">
-        <div className="mx-auto w-full max-w-6xl px-4 pb-14">
-          <RepeatedQuoteCta
-            heading="See if your ZIP is on our route."
-            subtext="Most Tulsa-metro homes are covered. Get a free quote in under 60 seconds."
-            variant="navy"
-            eventLabel="home_after_services"
-          />
-        </div>
-      </section>
-
-      {/* Service Area checker */}
+      {/* Service Area checker — its own ZIP-first interaction lives here,
+          so we don't need an extra "see if your ZIP is on our route" CTA
+          immediately above it. */}
       <section className="section-alt">
         <div className="mx-auto w-full max-w-6xl px-4 py-14">
           <ServiceAreaChecker />

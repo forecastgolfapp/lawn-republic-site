@@ -8,46 +8,52 @@
 const STEPS = [
   {
     season: "Early Spring (Feb–Mar)",
-    title: "Pre-Emergent + Post Control",
-    bermuda: "Specticle FLO (pre-emergent) + RoundUp for existing winter weeds.",
-    fescue: "Barricade 4FL + 3-Way Broadleaf Weed Control + High-Nitrogen Fertilizer.",
+    title: "Winter Weed Pre-Emergent + Fertilizer",
+    bermuda:
+      "Winter annual pre-emergent + post-emergent weed control for anything already up.",
+    fescue: "Nitrogen fertilizer with potassium and iron — no weed control this round.",
     details:
-      "First barrier against crabgrass, spurge, and annual bluegrass. Wakes fescue up for green-up."
+      "Bermuda gets its first barrier against winter weeds while we knock out anything already breaking through. Fescue gets a strong feeding to drive early green-up."
   },
   {
     season: "Late Spring (Apr–May)",
-    title: "Pre-Emergent + Weed Control",
-    bermuda: "Barricade 4FL + 3-Way Broadleaf Weed Control.",
-    fescue: "Barricade 4FL + 3-Way Broadleaf Weed Control + High-Nitrogen Fertilizer.",
-    details: "Extends crabgrass prevention and toughens turf before summer stress."
+    title: "Crabgrass Pre-Emergent + Weed Control",
+    bermuda: "Crabgrass pre-emergent + broadleaf weed control.",
+    fescue: "Crabgrass pre-emergent + broadleaf weed control.",
+    details:
+      "Same prescription for both turf types: build the season's crabgrass barrier and clean up broadleaf weeds before summer stress sets in."
   },
   {
     season: "Early Summer (June)",
-    title: "Fertilizer + Weed Control",
-    bermuda: "High-Nitrogen Fertilizer + spot treatment of weeds.",
-    fescue: "Preventative Fungicide + spot treatment of weeds.",
-    details: "Feeds Bermuda at peak growth, protects fescue from brown patch."
+    title: "Summer Fertilizer + Weed Control",
+    bermuda: "Nitrogen fertilizer with iron + post-emergent weed control as needed.",
+    fescue: "Post-emergent weed control + fungicide when conditions call for it.",
+    details:
+      "Bermuda hits peak growth with iron-boosted color and stays ahead of new weed flushes. Fescue gets brown-patch protection during humid stretches."
   },
   {
     season: "Mid-Summer (Jul–Aug)",
-    title: "Turf Maintenance",
-    bermuda: "High-Nitrogen Fertilizer + spot treatment of weeds.",
-    fescue: "Preventative Fungicide + spot treatment of weeds.",
-    details: "Keeps Bermuda dense through heat, continues fescue fungus protection."
+    title: "Mid-Summer Turf Care",
+    bermuda: "Nitrogen fertilizer with iron + post-emergent weed control as needed.",
+    fescue: "Post-emergent weed control + fungicide when conditions call for it.",
+    details:
+      "Same approach through Oklahoma heat — keeps Bermuda dense and dark green, keeps fescue free of summer disease."
   },
   {
     season: "Late Summer (Aug–Sep)",
-    title: "Turf Recovery",
-    bermuda: "High-Nitrogen Fertilizer + spot treatment of weeds.",
-    fescue: "Preventative Fungicide + spot treatment of weeds.",
-    details: "Final fertilizer push for Bermuda; disease prevention + cleanup for fescue."
+    title: "Late Summer Recovery",
+    bermuda: "Nitrogen fertilizer with iron + post-emergent weed control as needed.",
+    fescue: "Post-emergent weed control + fungicide when conditions call for it.",
+    details:
+      "Final push before Bermuda starts shifting toward dormancy. Fescue is prepped for fall overseeding if needed."
   },
   {
     season: "Fall (Oct–Nov)",
-    title: "Pre-Emergent + Winter Weed Control",
-    bermuda: "Simazine 4L + 3-Way Broadleaf Weed Control.",
-    fescue: "High-Nitrogen Fertilizer + spot treatment of weeds.",
-    details: "Builds the fall barrier against henbit and chickweed; improves winter color for fescue."
+    title: "Winter Pre-Emergent + Fertilizer",
+    bermuda: "Winter annual pre-emergent + broadleaf weed control.",
+    fescue: "Nitrogen fertilizer — no weed control this round.",
+    details:
+      "Bermuda's fall barrier against henbit and chickweed. Fescue gets a winter feeding for color into the cold months."
   }
 ];
 

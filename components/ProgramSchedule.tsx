@@ -11,9 +11,10 @@ const STEPS = [
     title: "Winter Weed Pre-Emergent + Fertilizer",
     bermuda:
       "Winter annual pre-emergent + post-emergent weed control for anything already up.",
-    fescue: "Nitrogen fertilizer with potassium and iron — no weed control this round.",
+    fescue:
+      "Nitrogen fertilizer with potassium and iron, plus post-emergent weed control if needed.",
     details:
-      "Bermuda gets its first barrier against winter weeds while we knock out anything already breaking through. Fescue gets a strong feeding to drive early green-up."
+      "Bermuda gets its first barrier against winter weeds while we knock out anything already breaking through. Fescue gets a strong feeding to drive early green-up — with spot weed control if anything's already up."
   },
   {
     season: "Late Spring (Apr–May)",

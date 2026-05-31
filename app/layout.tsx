@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Manrope, Source_Sans_3 } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -23,14 +23,14 @@ const bodyFont = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: ["400", "500", "600"]
+  weight: ["400", "500", "600", "700"]
 });
 
-const displayFont = Cormorant_Garamond({
+const displayFont = Manrope({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["400", "600"]
+  weight: ["500", "600", "700", "800"]
 });
 
 export const metadata: Metadata = {
@@ -38,9 +38,7 @@ export const metadata: Metadata = {
   description:
     "Premium weed control, fertilization, and pre-emergent programs for Tulsa, Bixby, Jenks, and Broken Arrow homes.",
   metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: "/"
-  },
+  alternates: { canonical: "/" },
   icons: {
     icon: "/logo-lawnrepublic.jpeg",
     apple: "/logo-lawnrepublic.jpeg"

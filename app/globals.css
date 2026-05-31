@@ -14,7 +14,7 @@
   --foreground: var(--brand-navy);
   --background: var(--bg-white);
   --font-body-fallback: "Source Sans 3", "Helvetica Neue", sans-serif;
-  --font-display-fallback: "Cormorant Garamond", "Georgia", serif;
+  --font-display-fallback: "Manrope", "Inter", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -31,21 +31,21 @@
 
   .font-display {
     font-family: var(--font-display), var(--font-display-fallback);
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4 {
     color: var(--brand-navy);
+    font-family: var(--font-display), var(--font-display-fallback);
+    letter-spacing: -0.02em;
   }
 
-  a {
-    text-decoration: none;
-  }
+  h1 { font-weight: 800; }
+  h2 { font-weight: 800; }
+  h3 { font-weight: 700; }
 
-  input,
-  textarea,
-  select {
-    font: inherit;
-  }
+  a { text-decoration: none; }
+  input, textarea, select { font: inherit; }
 }
 
 ::selection {
@@ -65,7 +65,7 @@
   .btn-primary-lg:hover { background-color: var(--brand-green-hover); }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-green px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-brand-green hover:text-white;
+    @apply inline-flex items-center justify-center rounded-full border-2 border-brand-green px-6 py-3 text-sm font-semibold text-brand-green transition hover:bg-brand-green hover:text-white;
   }
 
   .btn-navy {
@@ -74,7 +74,7 @@
   .btn-navy:hover { background-color: var(--brand-navy-hover); }
 
   .btn-gold {
-    /* Legacy class — points at the primary green so any old usage stays functional */
+    /* legacy alias → green */
     @apply inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-semibold text-white shadow-soft transition;
   }
   .btn-gold:hover { background-color: var(--brand-green-hover); }
@@ -88,11 +88,20 @@
   }
 
   .section-title {
-    @apply font-display text-3xl text-brand-navy;
+    @apply font-display text-4xl text-brand-navy sm:text-5xl;
+    font-weight: 800;
   }
 
-  /* Section background helper to alternate white / off-white visual rhythm. */
+  .section-title-xl {
+    @apply font-display text-5xl text-brand-navy sm:text-6xl;
+    font-weight: 800;
+  }
+
   .section-alt {
     @apply bg-brand-offwhite;
+  }
+
+  .section-dark {
+    @apply bg-brand-navy text-white;
   }
 }

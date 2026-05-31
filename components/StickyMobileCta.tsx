@@ -14,7 +14,7 @@ export const StickyMobileCta = () => {
       role="navigation"
       aria-label="Quick contact"
     >
-      <div className="mx-auto flex max-w-6xl items-stretch gap-2 px-3 py-2 safe-bottom">
+      <div className="mx-auto flex max-w-6xl items-stretch gap-2 px-3 py-2">
         <CallButton
           className="flex flex-1 items-center justify-center rounded-full bg-brand-navy px-3 py-3 text-sm font-semibold text-white shadow-soft"
           eventLabel="sticky_mobile"

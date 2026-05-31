@@ -9,9 +9,9 @@ import { CallButton } from "@/components/CallButton";
  * guaranteed."
  */
 
-const GUARANTEE_HEADLINE = "[PLACEHOLDER] The Lawn Republic Guarantee";
+const GUARANTEE_HEADLINE = "The Lawn Republic Guarantee";
 const GUARANTEE_BODY =
-  "[PLACEHOLDER — write your real guarantee in plain words. Example: 'If you're not happy with your lawn between visits, we'll come back and re-treat at no extra charge. Just call us.']";
+  "Free service calls between visits for our full-program customers. If you notice something off between treatments, give us a call — we'll come back out at no charge to take a look and treat what needs treating, without over-applying.";
 
 export const Guarantee = () => {
   return (

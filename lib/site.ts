@@ -6,7 +6,7 @@ export const EMAIL_HREF = "mailto:preeder@lawnrepublic.com";
 export const REALGREEN_PORTAL_URL = "https://www.lawngateway.com/lawnrepublic";
 export const VENMO_USERNAME = "LawnRepublic";
 export const VENMO_URL = "https://venmo.com/LawnRepublic";
-export const SITE_URL = "https://lawn-republic-site.vercel.app";
+export const SITE_URL = "https://www.lawnrepublic.com";
 
 // Set to null to hide the Refer-a-Friend links until a real referral URL is ready.
 // When you sign up with Clicki (or another referral platform), put the URL here.

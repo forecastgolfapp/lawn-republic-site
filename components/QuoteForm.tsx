@@ -11,6 +11,46 @@ const INITIAL_FORM = {
   _gotcha: ""
 };
 
+// Common US road-type abbreviations we'll accept (case-insensitive).
+const ROAD_TYPES = [
+  "st", "street", "ave", "avenue", "rd", "road", "blvd", "boulevard",
+  "dr", "drive", "ln", "lane", "ct", "court", "cir", "circle", "pl", "place",
+  "pkwy", "parkway", "way", "ter", "terrace", "trl", "trail", "hwy", "highway"
+];
+
+const ROAD_TYPE_REGEX = new RegExp(
+  `\\b(${ROAD_TYPES.join("|")})\\b\\.?`,
+  "i"
+);
+
+const validateAddress = (raw: string): string | null => {
+  const trimmed = raw.trim();
+  if (trimmed.length < 8) {
+    return "Please enter your full street address (e.g. 1234 Main St, Tulsa).";
+  }
+  if (!/^\d/.test(trimmed)) {
+    return "Address should start with a house number (e.g. 1234 Main St).";
+  }
+  // Must have letters somewhere — not just digits.
+  if (!/[a-zA-Z]{3,}/.test(trimmed)) {
+    return "Address looks incomplete — include the street name and city.";
+  }
+  // Must contain either a comma (separating street and city) or a recognized
+  // road-type word like "St", "Ave", "Blvd", etc.
+  if (!trimmed.includes(",") && !ROAD_TYPE_REGEX.test(trimmed)) {
+    return "Add the street type and city (e.g. 1234 Main St, Tulsa).";
+  }
+  return null;
+};
+
+const validatePhone = (raw: string): string | null => {
+  const digits = raw.replace(/\D/g, "");
+  // Accept 10-digit US numbers, or 11 digits starting with 1.
+  if (digits.length === 10) return null;
+  if (digits.length === 11 && digits.startsWith("1")) return null;
+  return "Please enter a 10-digit phone number (e.g. (918) 555-1234).";
+};
+
 type QuoteFormProps = {
   title?: string;
   subtitle?: string;
@@ -42,8 +82,29 @@ export const QuoteForm = ({
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatus("loading");
     setErrorMessage(null);
+
+    // Basic format validation — catches obvious junk before we hit the API.
+    // For a real "is this address a real place" check, swap for Mapbox or
+    // Google Places (would need an API key).
+    const addressProblem = validateAddress(formData.address);
+    if (addressProblem) {
+      setStatus("error");
+      setErrorMessage(addressProblem);
+      const target = document.getElementById(`${formId}-address`);
+      if (target) target.focus();
+      return;
+    }
+    const phoneProblem = validatePhone(formData.phone);
+    if (phoneProblem) {
+      setStatus("error");
+      setErrorMessage(phoneProblem);
+      const target = document.getElementById(`${formId}-phone`);
+      if (target) target.focus();
+      return;
+    }
+
+    setStatus("loading");
 
     try {
       const response = await fetch("/api/lead", {
@@ -114,6 +175,7 @@ export const QuoteForm = ({
                 name="phone"
                 type="tel"
                 required
+                autoComplete="tel"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
@@ -130,10 +192,11 @@ export const QuoteForm = ({
               name="address"
               type="text"
               required
+              autoComplete="street-address"
               value={formData.address}
               onChange={handleChange}
               className="w-full rounded-xl border border-brand-border bg-white px-3 py-2 text-sm text-brand-navy shadow-sm focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20"
-              placeholder="Street address, city"
+              placeholder="1234 Main St, Tulsa, OK"
             />
           </div>
           <div className="grid gap-1">
